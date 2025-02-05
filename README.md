@@ -48,3 +48,4 @@ The application uses the following state variables:
 - Socket.IO Client
   
 Output:- 
+![Image](https://github.com/user-attachments/assets/fd45dd3d-8aa8-4fff-ae85-4396a0f16224)
