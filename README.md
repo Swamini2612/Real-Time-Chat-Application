@@ -46,3 +46,5 @@ The application uses the following state variables:
 
 - React
 - Socket.IO Client
+  
+Output:- 
