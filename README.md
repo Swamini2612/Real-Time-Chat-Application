@@ -1,82 +1,48 @@
-# WebSocket Server Implementation
+# Socket.IO React Chat Application
 
-A simple WebSocket server implementation using Express.js and Socket.IO that supports room-based messaging.
+A simple React-based chat application using Socket.IO for real-time communication.
 
 ## Features
 
-- WebSocket connection handling
-- Room-based messaging support
-- CORS enabled for frontend integration
-- Express.js REST API endpoints
+- Real-time messaging
+- Room-based chat functionality
+- Connection management (connect/disconnect)
+- Message history display
 
-## Prerequisites
+## Components
 
-- Node.js (v14 or higher)
-- npm or yarn
+### App Component
 
-## Installation
+The main component handles all Socket.IO connections and chat functionality:
 
-1. Clone the repository
-2. Navigate to the server directory
-```bash
-cd server
-```
-3. Install dependencies
-```bash
-npm install
-```
+- Manages socket connection state
+- Handles message sending and receiving
+- Supports room-based messaging
+- Displays message history
+
+## Usage
+
+1. Start the server (make sure it's running on `http://localhost:3000`)
+2. Run the React application
+3. Click "Create Connection" to establish Socket.IO connection
+4. Enter a room ID (optional)
+5. Type your message and click "Send"
+6. Use "Close Connection" to disconnect from the server
+
+## State Management
+
+The application uses the following state variables:
+- `message`: Current message input
+- `replay`: Array of received messages
+- `room`: Current chat room ID
+- `connection`: Socket connection status
+
+## Socket Events
+
+- `message`: Emits messages to the server
+- `replay`: Listens for incoming messages from the server
 
 ## Dependencies
 
-- express
-- socket.io
-- cors
-- http
-
-## Configuration
-
-The server runs on port 3000 by default and accepts connections from:
-- Frontend URL: http://localhost:5173 (Vite's default dev server)
-
-## Running the Server
-
-```bash
-node index.js
-```
-
-## WebSocket Events
-
-### Server Events
-- `connection`: Handles new client connections
-- `disconnect`: Handles client disconnections
-
-### Client Events
-- `message`: Receives messages from clients
-  - Parameters: 
-    - `message`: Message content
-    - `room`: Room identifier
-
-### Emitted Events
-- `replay`: Broadcasts messages to room members
-
-## API Endpoints
-
-- `GET /`: Returns server status
-
-## Example Usage
-
-```javascript
-// Client-side connection
-const socket = io('http://localhost:3000');
-
-// Send message to a room
-socket.emit('message', {
-    message: 'Hello Room!',
-    room: 'room1'
-});
-
-// Listen for messages
-socket.on('replay', (message) => {
-    console.log('Received:', message);
-});
-```
+- React
+- Socket.IO Client
