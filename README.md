@@ -1,3 +1,7 @@
+
+
+
+
 # Socket.IO React Chat Application
 
 A simple React-based chat application using Socket.IO for real-time communication.
